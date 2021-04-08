@@ -1,0 +1,30 @@
+:Namespace P1108
+    ⍝ LeetCode problem #1108
+    ⍝ Defanging an IP Address
+            
+    ⍝ "Point-free" regex solution
+    Solution ← '\.'⎕R'[.]'
+    
+    ⍝ Split on '.', rejoin with '[.]'
+    Solution2 ← ⊃((⊣,'[.]',⊢)/'.'∘≠⊆⊢)
+    
+    ⍝ Put '[.]' "at" the positions with '.' and flatten
+    Solution3 ← ∊(⊂'[.]')@('.'∘=)                      
+    
+    ⍝ Trying to only work with flat arrays
+    Solution4 ← {
+        exp ← ⍵/⍨1+¯4×d←'.'=⍵
+        exp[∊(⍳3)∘.+(⍸d)+2×⍳3] ← 3/'[.]'
+        exp
+    }
+    
+    ∇ r ← RTC
+    ⍝ Runtime comparison of the solutions.
+    addr ← '127.0.158.1'
+    :If 0=⎕NC'cmpx'
+        'cmpx'⎕CY'dfns'
+    :EndIf
+    r ← cmpx 'Solution addr' 'Solution2 addr' 'Solution3 addr' 'Solution4 addr'
+    ∇
+:EndNamespace
+
