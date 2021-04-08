@@ -1,0 +1,8 @@
+:Namespace P1480
+    ⍝ LeetCode problem #1480
+    ⍝ Running Sum of 1d Array, https://leetcode.com/problems/running-sum-of-1d-array/
+                 
+    ⍝ In APL, generally there's more than one obvious way to do it...
+    ⍝ Not this time.
+    Solution ← +\
+:EndNamespace
