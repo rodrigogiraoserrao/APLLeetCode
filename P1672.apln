@@ -5,3 +5,4 @@
     ⍝ Another straightforward solution
     Solution ← ⌈/+/
 :EndNamespace
+
