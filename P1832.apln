@@ -1,0 +1,8 @@
+:Namespace P1832
+    ⍝ LeetCode problem #1832
+    ⍝ Check if the Sentence Is Pangram, https://leetcode.com/problems/check-if-the-sentence-is-pangram
+    
+    ⍝ Tacit solution that reads
+    ⍝ “Are all the lowercase letters in the argument?”
+    Sol ← (∧/(⎕C⎕A)∊⊢)
+:EndNamespace
