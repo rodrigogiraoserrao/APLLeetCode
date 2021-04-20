@@ -1,22 +1,27 @@
 :Namespace P1108
     ⍝ LeetCode problem #1108
     ⍝ Defanging an IP Address, https://leetcode.com/problems/defanging-an-ip-address
+    (⎕IO ⎕ML) ← 0 1
             
     ⍝ (Tacit) regex solution
-    Solution ← '\.'⎕R'[.]'
+    Sol ← '\.'⎕R'[.]'
     
     ⍝ (Tacit) split on '.', rejoin with '[.]'
-    Solution2 ← ⊃((⊣,'[.]',⊢)/'.'∘≠⊆⊢)
+    Sol2 ← ⊃((⊣,'[.]',⊢)/'.'∘≠⊆⊢)
     
     ⍝ (Tacit) put '[.]' "at" the positions with '.' and flatten
-    Solution3 ← ∊(⊂'[.]')@('.'∘=)                      
+    Sol3 ← ∊(⊂'[.]')@('.'∘=)                      
     
     ⍝ (Dfn) trying to only work with flat arrays
-    Solution4 ← {
+    Sol4 ← {
         exp ← ⍵/⍨1+¯4×d←'.'=⍵
         exp[∊(⍳3)∘.+(⍸d)+2×⍳3] ← 3/'[.]'
         exp
     }
+    
+    ⍝ Similar to Sol, the variant switches off PCRE
+    ⍝ and activates a faster array-based system. By @abrudz.
+    Sol5 ← '.'⎕R'[.]'⍠'Regex'0
     
     ∇ r ← RTC
         ⍝ Runtime comparison of the solutions.
@@ -24,7 +29,7 @@
         :If 0=⎕NC'cmpx'
             'cmpx'⎕CY'dfns'
         :EndIf
-        r ← cmpx 'Solution addr' 'Solution2 addr' 'Solution3 addr' 'Solution4 addr'
+        r ← cmpx 'Sol addr' 'Sol2 addr' 'Sol3 addr' 'Sol4 addr' 'Sol5 addr'
     ∇
 :EndNamespace
 
