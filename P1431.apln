@@ -5,4 +5,25 @@
     ⍝ Tacit solution that reads
     ⍝ “When is the maximum of the right less than or equal to the sum of the two arguments?”
     Sol ← (⌈/⍤⊢≤+)
+    
+    ⍝ Tacit solution, equivalent to Sol, but rearranging the maths makes it faster for large inputs.
+    ⍝ max(kids)≤kids+extra ←→ max(kids)-extra≤kids ←→ kids≥max(kids)-extra.
+    ⍝ Proposed by @abrudz.
+    Sol2 ← (⊢≥⌈/⍤⊢-⊣)
+    
+    ∇ r ← RTC
+        ⍝ Runtime comparison of the solutions
+        :If 0=⎕NC'cmpx'
+            'cmpx'⎕CY'dfns'
+        :EndIf
+        extra ← 1
+        kids ← 4 2 1 1 2
+        r ← cmpx 'extra Sol kids' 'extra Sol2 kids' 
+
+        r ⍪← '-' 
+
+        extraL ← 500
+        kidsL ← ?1000⍴1000
+        r ← ↑r,⍥↓cmpx 'extraL Sol kidsL' 'extraL Sol2 kidsL'
+    ∇
 :EndNamespace
