@@ -1,0 +1,14 @@
+:Namespace P1470
+    ⍝ LeetCode problem #1470
+    ⍝ Shuffle the Array, https://leetcode.com/problems/shuffle-the-array/
+    (⎕IO ⎕ML) ← 0 1
+    
+    Sol ← {
+        ⍝ Reshape into two rows, then ravel the transpose.
+        ,⍉2(2÷⍨≢⍵)⍴⍵
+    }
+    
+    ⍝ Tacit solution implementing same algorithm as above.
+    Sol2 ← (,∘⍉⊢⍴⍨2,(÷∘2)∘≢)
+
+:EndNamespace

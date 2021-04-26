@@ -1,0 +1,17 @@
+:Namespace P1512
+    ⍝ LeetCode problem #1512
+    ⍝ Number of Good Pairs, https://leetcode.com/problems/number-of-good-pairs/
+    (⎕IO ⎕ML) ← 0 1
+    
+    Sol ← {
+        ⍝ Use the outer product to compare all elements with themselves,
+        ⍝ then sum all of the matches, subtract the irrelevant matches
+        ⍝ that each element makes with itself and divide by two to account
+        ⍝ for the duplication of matches with indices i,j and j,i
+        2÷⍨(≢⍵)-⍨+/,∘.=⍨⍵
+    }                    
+    
+    ⍝ Similar to `Sol`, but we actually use another outer product
+    ⍝ to create a Boolean mask that tells me which matches I care about.
+    Sol2 ← (+/∘,∘.=⍨×∘.<⍨∘⍳∘≢)
+:EndNamespace
