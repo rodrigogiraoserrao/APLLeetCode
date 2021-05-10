@@ -1,0 +1,66 @@
+:Namespace P1603
+    ⍝ LeetCode problem #1603
+    ⍝ Design Parking System, https://leetcode.com/problems/design-parking-system/
+    (⎕IO ⎕ML) ← 0 1
+            
+
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+    ⍝⍝⍝ --- Simple solution keeping track of state in a variable that is passed around. --- ⍝⍝⍝
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+
+    ParkingSystem ← ⊢
+    
+    AddCar ← {
+        newps ← ⍺-⍵=1+⍳3
+        (newps⌈0) (~¯1∊newps)
+    }                                                                                                 
+
+    
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+    ⍝⍝⍝ --- Solution using a namespace as a container for the state and the `AddCar` function. --- ⍝⍝⍝
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+    
+    NewParkingSystem ← {
+        ⍝ Creates a new parking system with the given parking spots.
+        cPS ← ⎕NS PSNamespace
+        cPS.ps ← ⍵
+        cPS
+    }
+    
+    :Namespace PSNamespace
+        ⍝ Namespace containing the parking system state and the function to add a car.
+
+        ps ← 0 0 0
+        
+        AddCar ← {
+            newps ← ps-⍵=1+⍳3
+            ps ⊢← newps⌈0
+            ~¯1∊newps
+        }
+    :EndNamespace
+    
+    
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+    ⍝⍝⍝ --- Solution using an actual class to represent the parking system. --- ⍝⍝⍝
+    ⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝⍝
+    
+    :Class PSClass
+        ⍝ Class containing the state, a constructor to create new parking systems and a function
+        ⍝ to check if a car can be parked.
+    
+        :Field Public ps ← 0 0 0
+        
+        ∇ NewParkingSystem spots
+            :Implements Constructor
+            :Access Public
+            ps ← spots   
+        ∇
+        
+        ∇ bool ← AddCar carType ;newps
+            :Access Public
+            newps ← ps-carType=1+⍳3
+            ps ← newps⌈0
+            bool ← ~¯1∊newps
+        ∇
+    :EndClass
+:EndNamespace
