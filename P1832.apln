@@ -7,5 +7,5 @@
     Sol ← (∧/(⎕C⎕A)∊⊢)
     
     ⍝ by @abrudz: This one is both shorter and handles mixed-case input
-    Sol2 ← ∧/∊⍥⎕C∘⎕A
+    Sol2 ← ∧/⎕A∊⍥⎕C⊢
 :EndNamespace
