@@ -1,0 +1,13 @@
+:Namespace P0315
+    ⍝ LeetCode problem #315
+    ⍝ Count of Smaller Numbers After Self, https://leetcode.com/problems/count-of-smaller-numbers-after-self/
+    (⎕IO ⎕ML) ← 0 1                                                                                          
+    ⍝ Follow-up to P#1365, https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+    
+    ⍝ _Very_ similar to the solution to P1365,
+    ⍝ except we use (∘.<⍨⍳≢⍵) to mask out the comparisons
+    ⍝ that we do not care about.
+    Sol  ← {+/(∘.<⍨⍳≢⍵)∧∘.>⍨⍵}
+    Sol2 ← (+/ ∘.<⍨∘⍳∘≢∧∘.>⍨)   ⍝ Tacit
+:EndNamespace
+
