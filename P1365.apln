@@ -1,0 +1,9 @@
+:Namespace P1365
+    ⍝ LeetCode problem #1365
+    ⍝ How Many Numbers Are Smaller Than the Current Number, https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+    (⎕IO ⎕ML) ← 0 1
+    
+    ⍝ Uses ∘.>⍨ to compare all numbers with themselves,
+    ⍝ then uses +/ to sum along rows, i.e., to do the counting.
+    Sol ← +/∘.>⍨
+:EndNamespace
