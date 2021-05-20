@@ -8,7 +8,24 @@
         ,⍉2(2÷⍨≢⍵)⍴⍵
     }
     
-    ⍝ Tacit solution implementing same algorithm as above.
-    Sol2 ← (,∘⍉⊢⍴⍨2,(÷∘2)∘≢)
-
+    ⍝ Tacit solution implementing same algorithm as above, only taking right argument.
+    Sol2  ← (,∘⍉⊢⍴⍨2,(÷∘2)∘≢)
+    ⍝ ... which can (and should) be simplified to... (@abrudz)
+    Sol2_ ← (,∘⍉(2,2÷⍨≢)⍴⊢)       
+    
+    ⍝ HOWEVER, for some reason I completely ignored the fact that we also got a left argument!
+    
+    ⍝ Amazing inner product by @aral, my jaw dropped with this one.
+    Sol4 ← ⊃(↑,.,↓)
+    
+    ⍝ Another interesting solution with grade up (by Leandro).
+    Sol5 ← {⍵[⍋⍺|⍳≢⍵]}
+    
+    ⍝⍝⍝ Some dyadic solutions by @abrudz:
+    abrudzSol1 ← {,⍉2 ⍺⍴⍵}
+    abrudzSol2 ← (,∘⍉⊢⍴⍨2,⊣)
+    abrudzSol3 ← (,∘⍉(2,⊣)⍴⊢)
+    ⍝ If we pack both arguments on the right as `(nums n)`, we can write a short tacit solution:
+    abrudzSol4 ← ,∘⍉2@0⍴⊃
+    ⍝ `2@0` replaces `nums` with `2` giving `2 n` and this is then used to reshape `⊃(nums n)` i.e. `nums`
 :EndNamespace
