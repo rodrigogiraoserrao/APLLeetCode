@@ -15,7 +15,7 @@
     
     ⍝ HOWEVER, for some reason I completely ignored the fact that we also got a left argument!
     
-    ⍝ Amazing inner product by @aral, my jaw dropped with this one.
+    ⍝ Amazing inner product by "aral", my jaw dropped with this one.
     Sol4 ← ⊃(↑,.,↓)
     
     ⍝ Another interesting solution with grade up (by Leandro).
