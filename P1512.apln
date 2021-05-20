@@ -14,4 +14,23 @@
     ⍝ Similar to `Sol`, but we actually use another outer product
     ⍝ to create a Boolean mask that tells me which matches I care about.
     Sol2 ← (+/∘,∘.=⍨×∘.<⍨∘⍳∘≢)
+    
+    ⍝ Group by unique element and using ! to count possible combinations (by Leandro):
+    Sol3 ← +/{2!≢⍵}⌸
+    
+    ⍝ Straightforward recursion, but not exactly array-oriented (by Simão).
+    Sol4 ← {
+        ⍝ If the input vector has 0 or 1 elements, there's no good pairs and we return 0.
+        ⍝ Otherwise, we count how many good pairs we can do with the head of the input vector
+        ⍝ and then recurse (∇) after dropping the first element of the vector.
+        1≥≢⍵: 0
+        (∇1↓⍵) + +/(1↑⍵)=1↓⍵
+    }
+    
+    ⍝ By @abrudz as a comment on the YT video: https://www.youtube.com/watch?v=pa_06_1E3VU&list=PLgTqamKi1MS2b-aKabbnAsnTiQgJAbmnr
+    Sol ← +/¯1(+/↓=↑)¨,\
+    ⍝ ,\ builds all the prefixes of the input vector,
+    ⍝ ¯1(+/↓=↑)¨ goes through those prefixes, and compares (=)
+    ⍝ the last item (¯1↑) with all other elements (¯1↓), adding up (+/) the matches.
+    ⍝ We then sum everything with the outer +/.
 :EndNamespace
