@@ -1,0 +1,26 @@
+:Namespace P1342
+    ⍝ LeetCode problem #1342
+    ⍝ Number of Steps to Reduce a Number to Zero, https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+    (⎕IO ⎕ML) ← 0 1                                                                                          
+     
+    SolR ← {
+        ⍝ Recursive solution.
+        0=⍵: 0
+        2|⍵: 1+∇⍵-1
+        1+∇⍵÷2
+    }         
+    
+    SolTR ← {
+        ⍝ Tail-recursive solution.
+        ⍝ Tail recursion is more memory-efficient.
+        ⍺ ← 0
+        0=⍵: ⍺
+        2|⍵: (⍺+1)∇⍵-1
+        (⍺+1)∇⍵÷2
+    }
+    
+    ⍝ Figure out the binary expansion of the argument:
+    ⍝ The result is the length of the binary expansion
+    ⍝ plus the number of 1s in there, minus 1.
+    Sol ← (¯1++/+≢)∘(2∘⊥⍣¯1)
+:EndNamespace

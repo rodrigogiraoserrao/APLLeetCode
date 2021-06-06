@@ -1,0 +1,7 @@
+:Namespace P1281
+    ⍝ LeetCode problem #1281
+    ⍝ Subtract the Product and Sum of Digits of an Integer, https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+    (⎕IO ⎕ML) ← 0 1                                                                                          
+    
+    Sol ← (×/-+/)⍤(10∘⊥⍣¯1)
+:EndNamespace

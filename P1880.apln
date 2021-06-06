@@ -1,0 +1,10 @@
+:Namespace P1880
+    ⍝ LeetCode problem #1880
+    ⍝ Check if Word Equals Summation of Two Words, https://leetcode.com/problems/check-if-word-equals-summation-of-two-words/
+    (⎕IO ⎕ML) ← 0 1                                                                                          
+    
+    Sol ← {
+        nv ← (10⊥⎕A⍳1⎕C⊢)
+        (nv ⍺)=+/nv¨⍵
+    }
+:EndNamespace
