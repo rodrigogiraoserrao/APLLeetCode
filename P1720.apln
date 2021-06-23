@@ -1,0 +1,9 @@
+:Namespace P1720
+    ⍝ LeetCode problem #1720
+    ⍝ Decode XORed Array, https://leetcode.com/problems/decode-xored-array/
+    (⎕IO ⎕ML) ← 0 1                                                        
+                        
+    ⍝ ⍺ is the first element of the decoded array
+    ⍝ and ⍵ is the encoded result.
+    Sol ← {2⊥≠\2⊥⍣¯1⍺,⍵}
+:EndNamespace

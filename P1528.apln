@@ -1,0 +1,8 @@
+:Namespace P1528
+    ⍝ LeetCode problem #1528
+    ⍝ Shuffle String, https://leetcode.com/problems/shuffle-string/
+    (⎕IO ⎕ML) ← 0 1                                                
+          
+    ⍝ ⍺ is the character vector and ⍵ is the indices vector.
+    Sol ← {⍺[⍋⍵]}
+:EndNamespace
