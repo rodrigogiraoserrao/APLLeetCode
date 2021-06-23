@@ -1,6 +1,7 @@
 :Namespace P0771
     ⍝ LeetCode problem #771
     ⍝ Jewels and Stones, https://leetcode.com/problems/jewels-and-stones
+    (⎕IO ⎕ML) ← 0 1
 
     ⍝ Sum after (atop) the membership,
     ⍝ expects the stones on the left and the jewels on the right.    
