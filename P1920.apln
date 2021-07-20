@@ -1,0 +1,14 @@
+:Namespace P1920 
+    ⍝ LeetCode problem #1920
+    ⍝ Build Array from Permutation, https://leetcode.com/problems/build-array-from-permutation/
+    (⎕IO ⎕ML) ← 0 1
+
+    ⍝ Immediate solution
+    Sol ← {⍵[⍵]}
+    
+    ⍝ code_report's solution from https://www.youtube.com/watch?v=ctbGMuakpHk
+    Sol_cr ← ⊂⌷⊢
+    
+    ⍝ Another point-free solution building off of "the chipmunk" ⊃¨⊂
+    Sol_chip ← ⊃¨∘⊂⍨
+:EndNamespace     
