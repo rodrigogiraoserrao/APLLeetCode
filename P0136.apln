@@ -1,0 +1,11 @@
+:Namespace P0136
+    ⍝ LeetCode problem #136                                      
+    ⍝ Single Number, https://leetcode.com/problems/single-number/
+    (⎕IO ⎕ML) ← 0 1                                              
+    
+    ⍝ A more APL-y solution
+    Sol ← {⍵~⍵⌿⍨~≠⍵}
+    
+    ⍝ An APL rendition of the intended solution
+    SolXOR ← {2⊥≠/2⊥⍣¯1⊢⍺,⍵}/
+:EndNamespace

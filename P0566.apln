@@ -1,0 +1,12 @@
+:Namespace P0566
+    ⍝ LeetCode problem #566                                     
+    ⍝ Reshape the Matrix, https://leetcode.com/problems/reshape-the-matrix/
+    (⎕IO ⎕ML) ← 0 1       
+
+    ⍝ Check if the new shape holds the same number of elements,
+    ⍝ and use the standard reshape (⍴) if so.
+    Sol ← {
+        (×/⍺)≠×/⍴⍵: ⍵
+        ⍺⍴⍵
+    }                                 
+:EndNamespace
