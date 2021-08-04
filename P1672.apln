@@ -4,5 +4,11 @@
     
     ⍝ Another straightforward solution
     Solution ← ⌈/+/
+    
+    ⍝ With explicit mixing, if input is nested:
+    Sol2 ← {⌈/+/↑}
+    
+    ⍝ Using each instead of mixing, by Vadim Tukaev:
+    Sol3 ← ⌈/+/¨
 :EndNamespace
 
