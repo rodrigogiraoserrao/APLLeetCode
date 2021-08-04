@@ -6,6 +6,9 @@
     ⍝ “Are all the lowercase letters in the argument?”
     Sol ← (∧/(⎕C⎕A)∊⊢)
     
-    ⍝ by @abrudz: This one is both shorter and handles mixed-case input
+    ⍝ By @abrudz: This one is both shorter and handles mixed-case input
     Sol2 ← ∧/⎕A∊⍥⎕C⊢
+    
+    ⍝ By Vadim Tukaev on YouTube
+    Sol3 ← 26=≢∘∪
 :EndNamespace

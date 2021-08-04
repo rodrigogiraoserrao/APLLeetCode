@@ -4,4 +4,10 @@
     (⎕IO ⎕ML) ← 0 1
 
     Sol ← {∊⍴/⍵⍴⍨2,⍨2÷⍨≢⍵}
+    
+    ⍝ By @abrudz
+    Sol2 ← (∊⊢⍴/¨⍤⊂⍨≢⍴1 0⍨)
+    
+    ⍝ Also by @abrudz, avoiding explicit reshaping with stencil:
+    Sol3 ← ∊(⍴/⍤⊢⌺(⍪2 2))
 :EndNamespace
