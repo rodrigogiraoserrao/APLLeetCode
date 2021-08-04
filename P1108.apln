@@ -23,13 +23,23 @@
     ⍝ and activates a faster array-based system. By @abrudz.
     Sol5 ← '.'⎕R'[.]'⍠'Regex'0
     
+    ⍝ From Vadim Tukaev on YouTube
+    Sol6 ← {
+        SPLIT ← ≠⊆⊢
+        JOIN ← 1↓∘,,⍤0
+        ∊(⊂'[.]')∘JOIN '.'∘SPLIT ⍵
+    }
+    
+    ⍝ And a rework of Vadim's solution
+    Sol7 ← {3↓∊(⊂'[.]'),¨'.'(≠⊆⊢)⍵}
+    
     ∇ r ← RTC
         ⍝ Runtime comparison of the solutions.
         addr ← '127.0.158.1'
         :If 0=⎕NC'cmpx'
             'cmpx'⎕CY'dfns'
         :EndIf
-        r ← cmpx 'Sol addr' 'Sol2 addr' 'Sol3 addr' 'Sol4 addr' 'Sol5 addr'
+        r ← cmpx 'Sol addr' 'Sol2 addr' 'Sol3 addr' 'Sol4 addr' 'Sol5 addr' 'Sol6 addr' 'Sol7 addr'
     ∇
 :EndNamespace
 
