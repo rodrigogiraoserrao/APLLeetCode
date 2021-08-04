@@ -8,5 +8,16 @@
     Sol ← {
         (×/⍺)≠×/⍴⍵: ⍵
         ⍺⍴⍵
-    }                                 
+    }
+    
+    ⍝ == A couple of contributions by @abrudz ==
+    ⍝ A branch-less solution
+    Sol2 ← {⍺⍴⍣((×/⍺)=×/⍴⍵)⊢⍵}
+    ⍝ Try the reshape, then see if the ravels match
+    Sol3 ← {
+        ⍵≢⍥,r←⍺⍴⍵:⍵
+        r
+    }
+    ⍝ Based on if the ravels match, pick the result
+    Sol4 ← ⍴(≢⍥,⊃,⍥⊂)⊢                                 
 :EndNamespace
