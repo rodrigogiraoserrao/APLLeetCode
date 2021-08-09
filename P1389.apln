@@ -1,0 +1,10 @@
+:Namespace P1389
+    ⍝ LeetCode problem #1389                                      
+    ⍝ Create Target Array in the Given Order, https://leetcode.com/problems/create-target-array-in-the-given-order/
+    (⎕IO ⎕ML) ← 0 1                                              
+    
+    Sol ← {
+        t ← ⍬
+        ⊃⌽⍺{t ⊢← (⍺↑t),⍵,⍺↓t}¨⍵
+    }
+:EndNamespace
