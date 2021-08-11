@@ -1,0 +1,8 @@
+:Namespace P1221
+    ⍝ LeetCode problem #1221                                     
+    ⍝ Split a String in Balanced Strings, https://leetcode.com/problems/split-a-string-in-balanced-strings/
+    (⎕IO ⎕ML) ← 0 1       
+    
+    ⍝ Inspired by Iverson's APL code to check if a string has balanced parens.
+    Sol ← {+⌿0=+⍀-⌿'RL'∘.=⍵}
+:EndNamespace

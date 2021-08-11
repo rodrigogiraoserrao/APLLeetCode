@@ -1,0 +1,12 @@
+:Namespace P1678
+    ⍝ LeetCode problem #1678                                     
+    ⍝ Goal Parser Interpretation, https://leetcode.com/problems/goal-parser-interpretation/
+    (⎕IO ⎕ML) ← 0 1                                                                        
+                               
+    ⍝ Look for '()' to replace with 'o',
+    ⍝ then remove remaining parens.
+    Sol ← {'()'~⍨'○'@('()'∘⍷)⍵}    
+    
+    ⍝ Regex-based approach:
+    Sol2 ← ('\(\)' '\(al\)' ⎕R 'o' 'al')
+:EndNamespace

@@ -1,0 +1,13 @@
+:Namespace P1773
+    ⍝ LeetCode problem #1773                                     
+    ⍝ Count Items Matching a Rule, https://leetcode.com/problems/count-items-matching-a-rule/
+    (⎕IO ⎕ML) ← 0 1                                                                          
+    
+    fields ← 'type' 'color' 'name'
+    
+    Sol ← {
+        ⍝ ⍵ is the nested vector with items.
+        ⍝ (key value) ← ⍺ is the query
+        +⌿(⊂⊃⌽⍺)≡⍤0⊢(fields⍳⊂⊃⍺)⌷⍉↑⍵
+    }
+:EndNamespace
