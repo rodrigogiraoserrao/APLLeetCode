@@ -1,0 +1,21 @@
+:Namespace P0079
+    ⍝ LeetCode problem #79                                      
+    ⍝ Word Search, https://leetcode.com/problems/word-search/
+    (⎕IO ⎕ML) ← 0 1
+
+    SolRec ← {
+        (brd wrd) ← ⍵
+        ''≡wrd: 1
+        pos ← ⍸brd=⊃wrd
+        ⍺ ← pos+⊂1 0    ⍝ "cheat" in the 1st call
+        lgl ← pos⌿⍨1=+/↑|pos-⍺
+        ∨⌿{(⊂⍵)SolRec ((⎕UCS 0)@(⊂⍵)⊢brd)(1↓wrd)}¨lgl
+    }
+ 
+    Sol ← {
+        (brd wrd) ← ⍵
+        paths ← ↑↑⊃(,[⍳2]∘.(,⍥⊆))⌿(⊂⍸)⍤2⊢wrd∘.=brd
+        adj ← paths⌿⍨∧/1=+/|2-⌿[1]paths
+        ∨⌿(∪≡⊢)⍤2⊢adj
+    }
+:EndNamespace

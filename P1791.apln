@@ -1,0 +1,15 @@
+:Namespace P1791
+    ⍝ LeetCode problem #1791
+    ⍝ Find Center of Star Graph, https://leetcode.com/problems/find-center-of-star-graph/
+    (⎕IO ⎕ML) ← 0 1                                              
+    
+    ⍝ Take the first two edges and find their intersection.
+    Sol ← {⊃∩⌿2↑⍵}
+
+    ⍝ Corresponding tacit solution.    
+    TSol ← ⊃(∩⌿2↑⊢)
+
+    ⍝ Flatten the structure and use unique mask to filter the centre.
+    ⍝ Works on Dyalog APL 18.0+    
+    Sol2 ← {⊃w⌿⍨~≠w←∊⍵}
+:EndNamespace
