@@ -13,4 +13,9 @@
         ns[⊃{⍺,⍨⍺(≤+⊢)⍵}/⍬,⍨⌽⍺]←⍵
         ns
     }
+
+    ⍝ The same idea as above, but eliminates an extra variable ns
+    Sol3 ← {
+        ⍵⌷⍨⊂⍋↓⍵,[0.5]⍨⊃{⍺,⍨⍺(≤+⊢)⍵}/⍬,⍨⌽⍺
+    }
 :EndNamespace
