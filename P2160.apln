@@ -1,0 +1,7 @@
+:Namespace P2160
+    ⍝ LeetCode problem #2160
+    ⍝ Minimum Sum of Four Digit Number After Splitting Digits, https://leetcode.com/problems/minimum-sum-of-four-digit-number-after-splitting-digits/
+    (⎕IO ⎕ML) ← 0 1                                                                                    
+
+    Sol ← {+⌿(2⌿10 1)×{⍵[⍋⍵]}10⊥⍣¯1⊢⍵}
+:EndNamespace
