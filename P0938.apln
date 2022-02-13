@@ -1,0 +1,9 @@
+:Namespace P0938
+    ⍝ LeetCode problem #938
+    ⍝ Range Sum of BST, https://leetcode.com/problems/range-sum-of-bst/
+    (⎕IO ⎕ML) ← 0 1
+
+    ⍝ The low and high values are ⍺ and the BST is ⍵.
+    ⍝ e.g. 7 15 Sol 10 5 15 3 7 ⍬ 18
+    Sol ←  {(l h) ← ⍺ ⋄ +⌿(⊢×l∘≤∧≤∘h=)∊⍵}
+:EndNamespace
