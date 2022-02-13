@@ -1,0 +1,10 @@
+:Namespace P2114
+    ⍝ LeetCode problem #2114
+    ⍝ Maximum Number of Words Found in Sentences, https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
+    (⎕IO ⎕ML) ← 0 1
+    
+    ⍝ Use the "slice" idiom from the tooltip of "Partition"
+    Sol ← ' '∘(⌈⌿(≢≠⊆⊢)¨)
+    ⍝ Count the words by counting the spaces between the words
+    Sol1 ← {⌈⌿1+(+/-{+/∧\⌽⍵})' '=↑⍵}
+:EndNamespace
