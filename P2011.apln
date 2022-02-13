@@ -1,0 +1,7 @@
+:Namespace P1929
+    ⍝ LeetCode problem #2011
+    ⍝ Final Value of Variable After Performing Operations, https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
+    (⎕IO ⎕ML) ← 0 1
+                                                                                  
+    Sol ← {(≢⍵)-⍨2×+⌿'+'=1⌷⍉↑⍵}
+:EndNamespace
