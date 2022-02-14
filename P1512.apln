@@ -28,9 +28,14 @@
     }
     
     ⍝ By @abrudz as a comment on the YT video: https://www.youtube.com/watch?v=pa_06_1E3VU&list=PLgTqamKi1MS2b-aKabbnAsnTiQgJAbmnr
-    Sol ← +/¯1(+/↓=↑)¨,\
+    Sol5 ← +/¯1(+/↓=↑)¨,\
     ⍝ ,\ builds all the prefixes of the input vector,
     ⍝ ¯1(+/↓=↑)¨ goes through those prefixes, and compares (=)
     ⍝ the last item (¯1↑) with all other elements (¯1↓), adding up (+/) the matches.
     ⍝ We then sum everything with the outer +/.
+    
+    ⍝ Use where & mix ( ↑⍸ ) to get coordinates then find those where x<y and sum (+/) (By @dennyzmeen)
+    Sol6←{+/</↑⍸∘.=⍨⍵}
+    ⍝ the comparison (<) gets rid of all undesirables
+    
 :EndNamespace
