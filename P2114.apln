@@ -7,4 +7,6 @@
     Sol ← ' '∘(⌈⌿(≢≠⊆⊢)¨)
     ⍝ Count the words by counting the spaces between the words
     Sol1 ← {⌈⌿1+(+/-{+/∧\⌽⍵})' '=↑⍵}
+    ⍝ Same as above, but checking for spaces before mixing avoids creating trailing spaces
+    Sol2 ← {1+⌈/+/↑' '=⍵}
 :EndNamespace
