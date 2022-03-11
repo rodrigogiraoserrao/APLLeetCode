@@ -1,0 +1,23 @@
+:Namespace P0001
+    ⍝ LeetCode problem #1
+    ⍝ Two Sum, https://leetcode.com/problems/two-sum/
+    (⎕IO ⎕ML) ← 0 1
+    
+    ⍝ Use the outer product to brute-force all possible pairs.   
+    Sol ← {⊃⍸(∘.≠⍨⍳≢⍵)∧⍺=∘.+⍨⍵}
+    
+    SolEfficient ← {
+        ⍝ O(n log n) solution
+        ⍝ Sorts the original vector, then look at the first and last items of the vector.
+        ⍝ Keep trimming the vector while the sum doesn't match the target.
+        FT ← {
+            s ← (⊃⍵)+⊃⌽⍵
+            s=⍺:(⊃⌽⍵)(⊃⍵)
+            s>⍺:⍺ ∇ ¯1↓⍵
+            s<⍺:⍺ ∇  1↓⍵
+        }
+        nums ← ⍺ FT{⍵[⍋⍵]}⍵
+        if ← ⊃⍸⍵=⊃nums
+        if,⊃if~⍨⍸⍵=⊃⌽nums
+    }
+:EndNamespace
