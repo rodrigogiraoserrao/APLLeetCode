@@ -4,5 +4,8 @@
     (⎕IO ⎕ML) ← 0 1       
     
     ⍝ Inspired by Iverson's APL code to check if a string has balanced parens.
-    Sol ← {+⌿0=+⍀-⌿'RL'∘.=⍵}
+    Sol1 ← {+⌿0=+⍀-⌿'RL'∘.=⍵}
+    
+    ⍝ Same method, different way
+    Sol2 ← {+/0=+\(~-⊢)'R'=⍵}
 :EndNamespace
