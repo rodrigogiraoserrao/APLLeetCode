@@ -1,0 +1,21 @@
+:Namespace P0006
+    ⍝ LeetCode problem #6
+    ⍝ Zigzag Conversion, https://leetcode.com/problems/zigzag-conversion/
+    (⎕IO ⎕ML) ← 0 1
+    
+    ⍝ Smarter solution.
+    ⍝ ⍵ is the string, ⍺ is number of rows.
+    Sol ← {⍵[⍋(≢s)⍴(⍳⍺),⌽1+⍳⍺-2]}
+       
+    S ← {                                                       
+        ⍝ (s n) ← ⍵                                         
+        ⍝ s is string, n is rows                            
+        (s n) ← ⍵                                            
+        g ← n-1                                              
+        mg ← ⌈(2×g)÷⍨¯1+≢s  ⍝ number of groups that is enough
+        bg ← (1+⍳g)∘.(,⍨)⍨(g×⍳mg)                            
+        cs ← (≢s)↑(⊂0 0),,bg,(⊢/bg)∘.+(⊂¯1 1)×1+⍳g           
+        p ← ⍋⊣/↑cs                                           
+        s[p]                                               
+    }                         
+:EndNamespace
