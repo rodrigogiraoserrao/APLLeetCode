@@ -1,0 +1,11 @@
+:Namespace P1795
+    ⍝ LeetCode problem #1795
+    ⍝ Rearrange Products Table, https://leetcode.com/problems/rearrange-products-table/
+    (⎕IO ⎕ML) ← 0 1
+                              
+    Sol ← {                                         
+        ⍝ Takes the data as a matrix.
+        ft ← ⊃⍪/⍵[;0]{⍺,'st1' 'st2' 'st3',⍪⍵}¨↓0 1↓⍵
+        (¯1≠⊢/ft)⌿ft
+    }
+:EndNamespace
