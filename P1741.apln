@@ -1,0 +1,19 @@
+:Namespace P1741
+    ⍝ LeetCode problem #1741
+    ⍝ Find Total Time Spent by Each Employee, https://leetcode.com/problems/find-total-time-spent-by-each-employee
+    (⎕IO ⎕ML) ← 0 1
+    
+    Sol ← {⍵[;0 1]{(⌽⍺),|+⌿-/⍵}⌸⍵[;2 3]}
+    ⍝ Assumes the data is in a matrix format:
+    ⍝┌─┬─────┬──┬───┐
+    ⍝│1│11-28│4 │32 │
+    ⍝├─┼─────┼──┼───┤
+    ⍝│1│11-28│55│200│
+    ⍝├─┼─────┼──┼───┤
+    ⍝│1│12-03│1 │42 │
+    ⍝├─┼─────┼──┼───┤
+    ⍝│2│11-28│3 │33 │
+    ⍝├─┼─────┼──┼───┤
+    ⍝│2│12-09│47│74 │
+    ⍝└─┴─────┴──┴───┘
+:EndNamespace
