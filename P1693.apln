@@ -1,0 +1,13 @@
+:Namespace P1693
+    ⍝ LeetCode problem #1693
+    ⍝ Daily Leads and Partners, https://leetcode.com/problems/daily-leads-and-partners/
+    (⎕IO ⎕ML) ← 0 1           
+                                                               
+    ⍝ Expression from the video:
+    ⍝ (dates ,⍥⊂¨ makes) {(⊃⍺),⎕←≢∘∪¨⎕←↓⍉↑⍵}⌸ leads ,¨ partners
+    Sol ← {
+        ⍝ Assumes the data comes as an inverted table.
+        (dates makes leads partners) ← ⍵              
+        (dates,⍥⊂¨makes){(⊃⍺),≢∘∪¨↓⍉↑⍵}⌸leads,¨partners
+    }
+:EndNamespace
